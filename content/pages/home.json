@@ -1,0 +1,47 @@
+{
+  "ru": {
+    "hero": {
+      "eyebrow": "TUUSE",
+      "title": "Мы создаем моменты_которые запоминаються",
+      "description": "THE UNITY OF UNIVERSE SPACE EVENTS",
+      "buttonText": "МЕРОПРИЯТИЯ",
+      "buttonUrl": "/ru/events",
+      "image": "/images/uploads/hero-bg.jpeg"
+    },
+    "about": {
+      "title": "Who we are?",
+      "description": "TUUSE [THE UNITY OF UNIVERSE SPACE EVENTS] - IS A",
+      "image": "/images/uploads/in-3.jpg"
+    }
+  },
+  "en": {
+    "hero": {
+      "eyebrow": "TUUSE",
+      "title": "We dive you into space",
+      "description": "THE UNITY IF UNIVERSE SPACE EVENTS",
+      "buttonText": "EVENTS",
+      "buttonUrl": "events",
+      "image": "/images/uploads/hero-bg.jpeg"
+    },
+    "about": {
+      "title": "TUUSE",
+      "description": "We are",
+      "image": "/images/uploads/in-3.jpg"
+    }
+  },
+  "ro": {
+    "hero": {
+      "eyebrow": "TUUSE",
+      "title": "Cream momente_pe care oamenii si le amintesc",
+      "description": "THE UNITY IF UNIVERSE SPACE EVENTS",
+      "buttonText": "kml",
+      "buttonUrl": "/ro/events",
+      "image": "/images/uploads/hero-bg.jpeg"
+    },
+    "about": {
+      "title": "k;lk",
+      "description": "jhk",
+      "image": "/images/uploads/in-3.jpg"
+    }
+  }
+}

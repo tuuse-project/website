@@ -1,0 +1,58 @@
+@supports (overflow:clip) {
+  .wrapper {
+    overflow: clip;
+  }
+}
+
+.wrapper {
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  padding: 0;
+
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+body {
+  line-height: 1;
+  font-size: 1rem;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+}
+
+*::after, *::before {
+  display: inline-block;
+}
+
+*, *::after, *::before {
+  box-sizing: border-box;
+}
+
+[class*='__container'] {
+  max-width: 71.25rem;
+  margin: 0 auto;
+  padding: 0 .9375rem;
+}
+
+main {
+    padding: 2rem;
+}
+
+.page-content--landing {
+    padding: 0;
+}
+
+.page-content--landing [class*='__container'] {
+ padding: 0 !important;
+}
+

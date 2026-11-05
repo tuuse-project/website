@@ -1,0 +1,33 @@
+{
+  "nav": {
+    "home": "Acasă",
+    "events": "Evenimente",
+    "about": "Despre noi",
+    "contacts": "Contacte"
+  },
+  "event": {
+    "buyTicket": "Cumpără bilet",
+    "soldOut": "Bilete epuizate",
+    "freeEntry": "Intrare liberă",
+    "startsIn": "Începe în",
+    "location": "Locație",
+    "lineup": "Lineup",
+    "ageRestriction": "18+"
+  },
+  "timer": {
+    "days": "z",
+    "hours": "o",
+    "minutes": "m",
+    "seconds": "s"
+  },
+  "footer": {
+    "rights": "Toate drepturile rezervate",
+    "followUs": "Urmărește-ne",
+    "terms": "Termeni și condiții"
+  },
+  "common": {
+    "loading": "Se încarcă...",
+    "error": "A apărut o eroare, încercați mai târziu",
+    "seeAll": "Vezi tot"
+  }
+}

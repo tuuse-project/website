@@ -1,0 +1,33 @@
+{
+  "nav": {
+    "home": "Home",
+    "events": "Events",
+    "about": "About Us",
+    "contacts": "Contacts"
+  },
+  "event": {
+    "buyTicket": "Get Tickets",
+    "soldOut": "Sold Out",
+    "freeEntry": "Free Entry",
+    "startsIn": "Starts in",
+    "location": "Location",
+    "lineup": "Lineup",
+    "ageRestriction": "18+"
+  },
+  "timer": {
+    "days": "d",
+    "hours": "h",
+    "minutes": "m",
+    "seconds": "s"
+  },
+  "footer": {
+    "rights": "All rights reserved",
+    "followUs": "Follow us",
+    "terms": "Terms & Refund policy"
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "An error occurred, please try again later",
+    "seeAll": "View all"
+  }
+}

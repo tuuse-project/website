@@ -1,0 +1,119 @@
+backend:
+  name: github
+  repo: your-username/your-repo
+  branch: main
+
+
+
+media_folder: "public/images/uploads"
+public_folder: "/images/uploads"
+
+i18n:
+  structure: multiple_files
+  locales: [ru, en, ro]
+  default_locale: ru
+
+logo:
+  src: /images/logo-dark.png
+  show_in_header: true
+
+collections:
+  - name: events
+    label: Events
+    label_singular: Event
+    folder: content/events
+    create: true
+    extension: json
+    format: json
+    i18n: true
+
+    fields:
+      # Переводимые поля
+      - label: Slug
+        name: slug
+        widget: string
+        i18n: true
+
+      - label: Title
+        name: title
+        widget: string
+        i18n: true
+
+      - label: Description
+        name: description
+        widget: text
+        i18n: true
+
+      - label: Cover
+        name: cover
+        widget: image
+        i18n: true
+
+      # Общие поля
+      - label: Date
+        name: date
+        widget: datetime
+        i18n: duplicate
+
+      - label: Time
+        name: time
+        widget: string
+        i18n: duplicate
+
+      - label: Location
+        name: location
+        widget: string
+        i18n: duplicate
+
+      - label: Ticket URL
+        name: ticketUrl
+        widget: string
+        required: false
+        i18n: duplicate
+
+      - label: Status
+        name: status
+        widget: select
+        options:
+          - { label: Draft, value: draft }
+          - { label: Published, value: published }
+          - { label: Archived, value: archived }
+        i18n: duplicate
+
+  - name: homepage
+    label: Homepage
+
+    i18n:
+      structure: single_file
+      locales: [ru, en, ro]
+      default_locale: ru
+
+    files:
+      - name: home
+        label: Homepage
+        file: content/pages/home.json
+        i18n: true
+
+        fields:
+          - label: Hero
+            name: hero
+            widget: object
+            i18n: true
+            fields:
+              - { label: Eyebrow, name: eyebrow, widget: string, i18n: true }
+              - { label: Title, name: title, widget: string, i18n: true }
+              - { label: Description, name: description, widget: text, i18n: true }
+              - { label: Image, name: image, widget: image, i18n: true }
+              - { label: Button text, name: buttonText, widget: string, i18n: true }
+              - { label: Button URL, name: buttonUrl, widget: string, i18n: true }
+
+          - label: About
+            name: about
+            widget: object
+            i18n: true
+            fields:
+              - { label: Title, name: title, widget: string, i18n: true }
+              - { label: Description, name: description, widget: text, i18n: true }
+              - { label: Image, name: image, widget: image, i18n: true }
+
+local_backend: true
