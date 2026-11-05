@@ -51,4 +51,7 @@ export default defineNuxtConfig({
       tailwindcss(),
     ],
   },
+  nitro: {
+    preset: 'static',
+  },
 })
