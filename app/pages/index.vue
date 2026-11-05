@@ -166,6 +166,7 @@
 <script setup lang="ts">
 definePageMeta({
   layout: "landing",
+
 });
 const { locale, locales } = useI18n();
 const switchLocalePath = useSwitchLocalePath();
@@ -180,7 +181,7 @@ const pageData = computed(() => {
 });
 
 useHead({
-  title: 'TUUSE',
+  title: 'The Unity of Universe Space Events',
   meta: [
     { name: 'description', content: 'Discover events and experiences in your city' }
   ]
