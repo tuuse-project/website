@@ -13,6 +13,7 @@
     "@nuxtjs/i18n": "^10.6.0",
     "@nuxtjs/seo": "^6.0.1",
     "better-sqlite3": "^13.0.3",
+    "jwt-decode": "^4.0.0",
     "lucide-vue-next": "^1.0.0",
     "nuxt": "^4.6.4",
     "nuxt-studio": "^1.8.0",

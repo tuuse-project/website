@@ -33,7 +33,7 @@ const privacyPolicyText = computed(() => {
         <div class="footer-contacts">
           <a href="https://instagram.com/tuuse.project">
             <Instagram />
-            @tuuse.project
+            tuuse.project
           </a>
           <a href="mailto:support@tuuse.space">
             <Mail />
@@ -47,9 +47,9 @@ const privacyPolicyText = computed(() => {
         © 2026 TUUSE. All rights reserved.
       </p>
         <nav>
-        <a :href="privacyPolicyLink">
+        <!-- <a :href="privacyPolicyLink">
           {{ privacyPolicyText }}
-        </a>
+        </a> -->
        
       </nav>
       </div>

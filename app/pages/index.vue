@@ -58,29 +58,28 @@
         <div class="ticket-divider"></div>
 
         <form @submit.prevent="submitForm">
-          <div class="form-group">
-            <label for="name">FULL NAME</label>
-            <input
-              id="name"
-              v-model="form.name"
-              type="text"
-              placeholder="Your full name"
-              required
-            />
-          </div>
 
-          <div class="form-group">
-            <label for="email">EMAIL ADDRESS</label>
-            <input
-              id="email"
-              v-model="form.email"
+          <Input v-model="username" label="full name" type="text"
+              placeholder="Your full name"
+              required/>
+      
+
+        
+          <Input v-model="form.email" 
+          label="Email address" id="email"
+            
               type="email"
               placeholder="Your email address"
-              required
-            />
-          </div>
+              required/>
 
-          <div class="form-group">
+                 <Input  id="phone"
+              v-model="form.phone"
+                label="PHONE NUMBER" 
+              type="tel"
+              placeholder="+373"
+              required
+              />
+          <!-- <div class="form-group">
             <label for="phone">PHONE NUMBER</label>
             <input
               id="phone"
@@ -89,9 +88,9 @@
               placeholder="+373"
               required
             />
-          </div>
+          </div> -->
 
-          <div class="form-group">
+          <!-- <div class="form-group">
             <label for="quantity">QUANTITY</label>
             <div class="quantity-control">
               <button
@@ -110,7 +109,7 @@
                 +
               </button>
             </div>
-          </div>
+          </div> -->
 
           <div class="ticket-divider"></div>
 
@@ -121,7 +120,7 @@
 
           <button class="purchase-button" type="submit">
             CONTINUE TO PAYMENT
-            <span>↗</span>
+            <ArrowUpRight></ArrowUpRight>
           </button>
 
           <p class="payment-note">
@@ -164,9 +163,13 @@
 </template>
 
 <script setup lang="ts">
+import { ArrowUpRight } from 'lucide-vue-next';
+import Input from '~/components/Input.vue';
+
 definePageMeta({
   layout: "landing",
 
+  
 });
 const { locale, locales } = useI18n();
 const switchLocalePath = useSwitchLocalePath();
@@ -186,12 +189,17 @@ useHead({
     { name: 'description', content: 'Discover events and experiences in your city' }
   ]
 })
-
 import { computed, reactive, ref } from 'vue'
 
 const PRICE = 300
 
+const API_URL = 'http://localhost:8787/'
+
 const quantity = ref(1)
+const isSubmitting = ref(false)
+const submitError = ref('')
+const orderCreated = ref(false)
+const orderNumber = ref('')
 
 const form = reactive({
   name: '',
@@ -199,16 +207,59 @@ const form = reactive({
   phone: '',
 })
 
+const username = ref('')
 const total = computed(() => PRICE * quantity.value)
 
-function submitForm() {
-  // Stripe Checkout integration will be added here.
-  console.log({
-    ...form,
-    ticketType: 'GENERAL_ACCESS',
-    quantity: quantity.value,
-    total: total.value,
-  })
+async function submitForm() {
+  if (isSubmitting.value) return
+
+  isSubmitting.value = true
+  submitError.value = ''
+  orderCreated.value = false
+
+  try {
+    const response = await $fetch<{
+      success: boolean
+      data: {
+        orderId: string
+        orderNumber: string
+        status: string
+        quantity: number
+        totalAmount: number
+        currency: string
+      }
+    }>(`http://localhost:8787/v1/orders`, {
+      method: 'POST',
+      body: {
+        name: form.name,
+        email: form.email,
+        phone: form.phone,
+        quantity: quantity.value,
+      },
+    })
+
+    if (!response.success) {
+      throw new Error('Could not create order')
+    }
+
+    orderNumber.value = response.data.orderNumber
+    orderCreated.value = true
+
+
+    window.location.href = response.data.checkoutUrl
+  } catch (error: unknown) {
+    const err = error as {
+      data?: { message?: string }
+      message?: string
+    }
+
+    submitError.value =
+      err.data?.message ||
+      err.message ||
+      'Something went wrong. Please try again.'
+  } finally {
+    isSubmitting.value = false
+  }
 }
 </script>
 
@@ -679,8 +730,8 @@ function submitForm() {
 .form-group input {
   width: 100%;
   box-sizing: border-box;
-  background: #1b1b1b;
-  border: 1px solid #333;
+  background: #000000;
+  border-bottom: 1px solid #333;
   padding: 16px;
   color: white;
   font-family: inherit;
@@ -701,16 +752,22 @@ function submitForm() {
   display: flex;
   align-items: center;
   gap: 25px;
+  border-bottom: solid 1px #cccccc35;
+  padding: 0.25rem;
+  padding-left: 0px;
+  padding-right: 0px;
+  width: fit-content;
 }
 
 .quantity-control button {
   width: 38px;
   height: 38px;
-  background: #222;
+  background: #000000;
   border: 1px solid #444;
   color: white;
   cursor: pointer;
   font-size: 20px;
+  border-radius: 0.5rem;
 }
 
 .quantity-control span {

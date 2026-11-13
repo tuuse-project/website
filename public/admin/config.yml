@@ -1,6 +1,6 @@
 backend:
-  name: github
-  repo: your-username/your-repo
+  name: turbo-github
+  turbo_site_id: 34a520c6-b23d-4aad-bfb5-9b7b7cd41a35
   branch: main
 
 
