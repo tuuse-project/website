@@ -47,9 +47,9 @@ const privacyPolicyText = computed(() => {
         © 2026 TUUSE. All rights reserved.
       </p>
         <nav>
-        <!-- <a :href="privacyPolicyLink">
-          {{ privacyPolicyText }}
-        </a> -->
+        <NuxtLink href="/privacy-policy">
+          Privacy Policy
+        </NuxtLink>
        
       </nav>
       </div>

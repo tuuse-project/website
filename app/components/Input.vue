@@ -6,15 +6,28 @@
       :for="inputId"
       :class="{ 'is-focused': focused }"
     >
-      {{ label }}
+      {{ label }} <small v-if="optional">
+        OPTIONAL
+      </small>
+      <span v-if="required" class="ts-req">
+        *
+      </span>
     </label>
 
-    <div class="ts-input" :class="{ 'is-focused': focused }">
+   <div
+  class="ts-input"
+  :class="{
+    'is-focused': focused,
+    'ts-input--prefix': prefix
+  }"
+>
       <span class="corner corner-tl"></span>
       <span class="corner corner-tr"></span>
       <span class="corner corner-bl"></span>
       <span class="corner corner-br"></span>
-
+      <div class="ts-input-prefix" v-if="prefix">
+        {{ prefix }}
+      </div>
       <input
         :id="inputId"
         type="text"
@@ -38,9 +51,21 @@ defineProps({
     type: String,
     default: ''
   },
+  optional: {
+    type: Boolean,
+    default: false
+  },
+  required: {
+    type: Boolean,
+    default: false
+  },
   placeholder: {
     type: String,
     default: 'Enter text...'
+  },
+  prefix: {
+     type: String,
+    
   },
   modelValue: {
     type: String,
@@ -111,6 +136,7 @@ const inputId = useId()
   font: inherit;
   font-size: 14px;
   letter-spacing: 0.02em;
+  font-family: inherit;
 }
 
 .ts-input input::placeholder {
@@ -187,5 +213,17 @@ const inputId = useId()
   .ts-label {
     transition: none;
   }
+}
+
+.ts-req {
+  color: red;
+}
+
+.ts-input--prefix {
+  padding-left: 1rem;
+}
+
+.ts-input--prefix input {
+    padding: 16px 16px 16px 4px;
 }
 </style>

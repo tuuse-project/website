@@ -12,7 +12,7 @@ export default defineContentConfig({
     }),
 pages: defineCollection({
       type: 'data',
-      source: 'pages/home.json',
+      source: 'pages/**',
 
     }),
     events: defineCollection({

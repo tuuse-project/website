@@ -1,47 +1,26 @@
 {
-  "ru": {
-    "hero": {
-      "eyebrow": "TUUSE",
-      "title": "Мы создаем моменты_которые запоминаються",
-      "description": "THE UNITY OF UNIVERSE SPACE EVENTS",
-      "buttonText": "МЕРОПРИЯТИЯ",
-      "buttonUrl": "/ru/events",
-      "image": "/images/uploads/hero-bg.jpeg"
-    },
-    "about": {
-      "title": "Who we are?",
-      "description": "TUUSE [THE UNITY OF UNIVERSE SPACE EVENTS] - IS A",
-      "image": "/images/uploads/in-3.jpg"
-    }
+  "hero": {
+    "title": "WE DIVE YOU INTO SPACE",
+    "description": "THE UNITY OF UNIVERSE SPACE EVENTS",
+    "image": "/images/uploads/art002e009285~large.jpg",
+    "buttonText": "BE PART OF IT",
+    "buttonUrl": "/join"
   },
-  "en": {
-    "hero": {
-      "eyebrow": "TUUSE",
-      "title": "We dive you into space",
-      "description": "THE UNITY IF UNIVERSE SPACE EVENTS",
-      "buttonText": "EVENTS",
-      "buttonUrl": "events",
-      "image": "/images/uploads/hero-bg.jpeg"
-    },
-    "about": {
-      "title": "TUUSE",
-      "description": "We are",
-      "image": "/images/uploads/in-3.jpg"
-    }
+  "about": {
+    "title": "Who we are",
+    "description": "**TUUSE** is an independent event project bringing people together through electronic music, unique spaces, and shared experiences. More than events, we create atmospheres where music connects people and every moment becomes part of something bigger.",
+    "image": "/images/uploads/in-3.jpg"
   },
-  "ro": {
-    "hero": {
-      "eyebrow": "TUUSE",
-      "title": "Cream momente_pe care oamenii si le amintesc",
-      "description": "THE UNITY IF UNIVERSE SPACE EVENTS",
-      "buttonText": "kml",
-      "buttonUrl": "/ro/events",
-      "image": "/images/uploads/hero-bg.jpeg"
-    },
-    "about": {
-      "title": "k;lk",
-      "description": "jhk",
-      "image": "/images/uploads/in-3.jpg"
-    }
-  }
+  "presale": {
+    "enabled": false
+  },
+  "gallery": [
+    "/images/uploads/in-3.jpg",
+    "/images/uploads/hero-bg.jpeg",
+    "/images/uploads/screenshot-2026-11-03-at-15.48.16.png",
+    "/images/uploads/hero-bg.jpeg",
+    "/images/uploads/in-3.jpg",
+    "/images/uploads/screenshot-2026-11-03-at-15.48.16.png"
+  ],
+  "legal": "m,"
 }

@@ -1,11 +1,350 @@
+
 <!doctype html>
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta name="theme-color" content="#080808" />
+
     <title>TUUSE CMS</title>
+
+   <style>
+
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@300;400;450;500;550;600;650;700;800&display=swap');
+
+/* =========================================
+   TUUSE CMS — DARK DESIGN SYSTEM
+========================================= */
+
+:root {
+  color-scheme: dark;
+
+  --bg: #090909;
+  --bg-secondary: #101010;
+  --surface: #141414;
+  --surface-hover: #1c1c1c;
+  --surface-active: #222222;
+
+  --border: #262626;
+  --border-hover: #414141;
+
+  --text: #f5f5f5;
+  --text-secondary: #a1a1a1;
+  --text-muted: #666666;
+
+  --accent: #ffffff;
+  --accent-foreground: #090909;
+
+  --radius: 8px;
+  --radius-sm: 5px;
+
+  --transition: 180ms ease;
+}
+
+/* =========================================
+   BASE
+========================================= */
+
+* {
+  font-family: 'Geist', sans-serif !important;
+  box-sizing: border-box;
+}
+
+html {
+  background: var(--bg);
+}
+
+body {
+  margin: 0;
+  background: var(--bg) !important;
+  color: var(--text) !important;
+  font-size: 14px;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: #fff;
+  color: #000;
+}
+
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #383838;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* =========================================
+   HEADER / TOOLBAR
+========================================= */
+
+[class*="ToolbarContainer"],
+[class*="AppHeaderContent"] {
+  background: var(--bg) !important;
+  color: var(--text) !important;
+  border-bottom: 1px solid var(--border) !important;
+  box-shadow: none !important;
+}
+
+[class*="AppHeaderContent"] {
+  min-height: 64px;
+}
+
+[class*="AppHeaderContent"] img {
+  filter: invert(1);
+  transition: opacity var(--transition);
+}
+
+[class*="AppHeaderContent"] img:hover {
+  opacity: .7;
+}
+
+/* =========================================
+   SIDEBAR
+========================================= */
+
+aside {
+  background: var(--bg) !important;
+  color: var(--text) !important;
+  border-right: 1px solid var(--border) !important;
+  border-radius: 0 !important;
+}
+
+aside h2 {
+  display: none !important;
+}
+
+aside [class*="SearchContainer"] {
+  display: none !important;
+}
+
+aside [class*="SidebarNavLink"] {
+  background: transparent !important;
+  color: var(--text-secondary) !important;
+  border-left: 2px solid transparent !important;
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0 !important;
+  margin: 2px 8px 2px 0;
+  padding: 10px 14px !important;
+  transition: all var(--transition);
+}
+
+aside [class*="SidebarNavLink"]:hover {
+  background: var(--surface) !important;
+  color: var(--text) !important;
+}
+
+aside [class*="sidebar-active"] {
+  background: var(--surface) !important;
+  color: var(--text) !important;
+  border-left-color: var(--accent) !important;
+  font-weight: 600 !important;
+}
+
+/* =========================================
+   MAIN CONTENT
+========================================= */
+
+[class*="CollectionContainer"] {
+  margin: 0 !important;
+  background: var(--bg) !important;
+}
+
+[class*="CollectionTopContainer"] {
+  background: var(--bg) !important;
+  border-bottom: 1px solid var(--border) !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  color: var(--text) !important;
+  padding-top: 20px !important;
+  padding-bottom: 20px !important;
+}
+
+[class*="CollectionTopContainer"] * {
+  color: var(--text) !important;
+}
+
+[class*="NoPreviewContainer"] {
+  background: var(--bg) !important;
+}
+
+/* =========================================
+   CARDS / COLLECTION LIST
+========================================= */
+
+[class*="ListCardLink"] {
+  background: var(--surface) !important;
+  color: var(--text) !important;
+  border: 1px solid var(--border) !important;
+  border-radius: var(--radius) !important;
+  box-shadow: none !important;
+  transition:
+    background var(--transition),
+    border-color var(--transition),
+    transform var(--transition) !important;
+}
+
+[class*="ListCardLink"]:hover {
+  background: var(--surface-hover) !important;
+  border-color: var(--border-hover) !important;
+ 
+}
+
+[class*="ListCardLink"] * {
+  color: var(--text) !important;
+}
+
+/* =========================================
+   BUTTONS
+========================================= */
+
+button {
+  font-family: 'Geist', sans-serif !important;
+  transition: all var(--transition) !important;
+}
+
+[class*="TurboLoginButton"] {
+  background: var(--accent) !important;
+  color: var(--accent-foreground) !important;
+  border: 1px solid var(--accent) !important;
+  border-radius: var(--radius-sm) !important;
+  padding: 12px 24px !important;
+  font-weight: 650 !important;
+  font-size: 12px !important;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  box-shadow: none !important;
+}
+
+[class*="TurboLoginButton"]:hover {
+  background: transparent !important;
+  color: var(--accent) !important;
+}
+
+[class*="TurboLoginButton"]:focus-visible {
+  outline: 2px solid white !important;
+  outline-offset: 4px;
+}
+
+/* =========================================
+   AUTHENTICATION
+========================================= */
+
+[class*="StyledAuthenticationPage"] {
+  min-height: 100vh;
+  background:
+    radial-gradient(
+      ellipse at 50% 40%,
+      #171717 0%,
+      #0b0b0b 48%,
+      #050505 100%
+    ) !important;
+  color: var(--text) !important;
+  overflow: hidden;
+}
+
+[class*="StyledAuthenticationPage"] svg {
+  display: none !important;
+}
+
+[class*="StyledAuthenticationPage"] img {
+  filter: invert(1);
+  max-width: 260px;
+  margin-bottom: 20px;
+}
+
+/* =========================================
+   INPUTS
+========================================= */
+
+input,
+textarea,
+select {
+  background: var(--surface) !important;
+  color: var(--text) !important;
+  border: 1px solid var(--border) !important;
+  border-radius: var(--radius-sm) !important;
+  transition: border-color var(--transition) !important;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: #777 !important;
+  outline: none !important;
+  box-shadow: 0 0 0 3px #ffffff0a !important;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: var(--text-muted) !important;
+}
+
+/* =========================================
+   FOCUS / ACCESSIBILITY
+========================================= */
+
+:focus-visible {
+  outline: 2px solid #aaa;
+  outline-offset: 3px;
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 768px) {
+  [class*="CollectionTopContainer"] {
+    padding: 16px !important;
+  }
+
+  [class*="AppHeaderContent"] {
+    min-height: 56px;
+  }
+}
+
+
+[class*="ListCard"] {
+  background-color: transparent !important;
+  box-shadow: none !important
+}
+   </style>
   </head>
+
   <body>
+
+    <script>
+      // Customize Turbo login button
+
+      const observer = new MutationObserver(() => {
+        const button = document.querySelector(
+          '[class*="TurboLoginButton"]'
+        );
+
+        if (button && button.textContent.trim() !== 'LOGIN') {
+          button.textContent = 'LOGIN';
+        }
+      });
+
+      observer.observe(document.body, {
+        childList: true,
+        subtree: true,
+        characterData: true
+      });
+    </script>
+
     <script src="https://unpkg.com/decap-cms@^3/dist/decap-cms.js"></script>
+
   </body>
 </html>

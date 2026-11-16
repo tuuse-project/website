@@ -21,10 +21,9 @@
 }
 
 * {
-  margin: 0;
-  padding: 0;
+  
   box-sizing: border-box;
-    scroll-margin-top: 8rem;
+  scroll-margin-top: 8rem;
 }
 
 html {
@@ -123,11 +122,6 @@ h1, h2, h3 {
   overflow: hidden;
 }
 
-* {
-  padding: 0;
-  margin: 0;
-  border: 0;
-}
 
 body {
   line-height: 1;

@@ -3,7 +3,7 @@ import tailwindcss from '@tailwindcss/vite'
 export default defineNuxtConfig({
   site: {
     name: 'TUUSE - The Unity of Universe Space Events',
-    url: 'https://tuuse.space',
+    url: process.env.NUXT_SITE_URL || 'https://tuuse.space',
   },
   app: {
     head: {
@@ -53,5 +53,14 @@ export default defineNuxtConfig({
   },
   nitro: {
     preset: 'static',
+  },
+   runtimeConfig: {
+    public: {
+      apiBase:
+        process.env.NUXT_PUBLIC_API_BASE || 'https://api.tuuse.space',
+
+      environment:
+        process.env.NUXT_PUBLIC_ENVIRONMENT || 'production',
+    },
   },
 })
