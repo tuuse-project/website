@@ -2,7 +2,7 @@
   "hero": {
     "title": "WE DIVE YOU INTO SPACE",
     "description": "THE UNITY OF UNIVERSE SPACE EVENTS",
-    "image": "/images/uploads/art002e009285~large.jpg",
+    "image": "/images/uploads/img_6030.jpeg",
     "buttonText": "BE PART OF IT",
     "buttonUrl": "/join"
   },
@@ -22,5 +22,10 @@
     "/images/uploads/in-3.jpg",
     "/images/uploads/screenshot-2026-11-03-at-15.48.16.png"
   ],
-  "legal": "m,"
+  "legal": "m,",
+  "join": {
+    "title": "He",
+    "button": "Cx",
+    "url": "Dd"
+  }
 }
