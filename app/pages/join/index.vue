@@ -2,7 +2,8 @@
 <script setup lang="ts">
 import { reactive, ref } from 'vue'
 import Input from '~/components/Input.vue'
-
+import { ArrowUpRight } from 'lucide-vue-next'
+import { Check } from 'lucide-vue-next'
 const config = useRuntimeConfig()
 
 
@@ -70,7 +71,7 @@ async function submitForm() {
       <template v-if="!success">
        
 
-        <h1>Be part of<br /><span>the experience.</span></h1>
+        <h1>Be part of<br /><span>our guests</span></h1>
 
         <p class="description">
           Leave your details to join the TUUSE guest list.
@@ -146,7 +147,7 @@ async function submitForm() {
 
           <button type="submit" :disabled="loading">
             <span>{{ loading ? 'SUBMITTING...' : 'JOIN TUUSE' }}</span>
-            <span class="arrow">↗</span>
+              <ArrowUpRight :size="19" />
           </button>
 
         </form>
@@ -157,12 +158,11 @@ async function submitForm() {
       </template>
 
       <div v-else class="success">
-        <div class="success-icon">✓</div>
-
-        <div class="eyebrow">
-          REGISTRATION COMPLETE
+        <div class="success-icon">
+          <Check :size="25"></Check>
         </div>
 
+  
         <h1>You're <span>in.</span></h1>
 
         <p class="description">
@@ -170,14 +170,8 @@ async function submitForm() {
           Your registration has been received.
         </p>
 
-        <div v-if="qrCode" class="qr-container">
-          <img :src="qrCode" alt="Your registration QR code" />
-          <p>YOUR ENTRY QR CODE</p>
-        </div>
+     
 
-        <div v-else class="success-message">
-          We'll contact you with further information.
-        </div>
       </div>
 
     </div>
@@ -229,7 +223,7 @@ h1 span {
 
 .description {
   max-width: 380px;
-  margin-bottom: 36px;
+  margin: 0 auto;
   color: #888;
   font-size: 14px;
   line-height: 1.7;
@@ -385,14 +379,14 @@ button:disabled {
 }
 
 .success h1 {
-  margin-top: 28px;
+  margin-top: 0px;
 }
 
 .success-icon {
   display: grid;
   place-items: center;
-  width: 54px;
-  height: 54px;
+  width: 64px;
+  height:64px;
   margin: 0 auto 28px;
   border: 1px solid #555;
   border-radius: 50%;

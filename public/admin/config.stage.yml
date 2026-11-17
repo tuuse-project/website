@@ -1,0 +1,310 @@
+# ============================================
+# TUUSE CMS CONFIGURATION
+# ============================================
+
+backend:
+  name: turbo-github
+  turbo_site_id: 13cb3ff0-fbcd-4442-a554-705ba4d08013
+  branch: staging
+  
+
+# ============================================
+# MEDIA
+# ============================================
+
+media_folder: "public/images/uploads"
+public_folder: "/images/uploads"
+
+# ============================================
+# GENERAL
+# ============================================
+
+locale: en
+
+logo:
+  src: /images/logo-dark.png
+  show_in_header: true
+
+local_backend: true
+
+# ============================================
+# COLLECTIONS
+# ============================================
+
+collections:
+
+  # ==========================================
+  # 1. EVENTS
+  # ==========================================
+
+  - name: events
+    label: Events
+    label_singular: Event
+    folder: content/events
+    create: true
+    extension: json
+    format: json
+    slug: "{{slug}}"
+    summary: "{{title}} — {{date}}"
+
+    sortable_fields:
+      - date
+      - title
+      - status
+
+    fields:
+
+      - label: Slug
+        name: slug
+        widget: string
+        hint: URL identifier, e.g. summer-party
+
+      - label: Title
+        name: title
+        widget: string
+
+      - label: Description
+        name: description
+        widget: markdown
+
+      - label: Cover
+        name: cover
+        widget: image
+
+      - label: Date
+        name: date
+        widget: datetime
+        format: "YYYY-MM-DD"
+        date_format: "YYYY-MM-DD"
+        time_format: false
+
+      - label: Time
+        name: time
+        widget: string
+        required: false
+
+      - label: Location
+        name: location
+        widget: string
+
+      - label: Ticket URL
+        name: ticketUrl
+        widget: string
+        required: false
+
+      - label: Ticket Type
+        name: ticketType
+        widget: string
+        default: General Admission
+        required: false
+
+      - label: Price
+        name: price
+        widget: number
+        value_type: int
+        min: 0
+        required: false
+
+      - label: Currency
+        name: currency
+        widget: select
+        options:
+          - { label: MDL, value: MDL }
+          - { label: EUR, value: EUR }
+          - { label: USD, value: USD }
+        default: MDL
+        required: false
+
+      - label: Status
+        name: status
+        widget: select
+        options:
+          - { label: Draft, value: draft }
+          - { label: Published, value: published }
+          - { label: Archived, value: archived }
+        default: draft
+
+  # ==========================================
+  # 2. HOMEPAGE
+  # ==========================================
+
+  - name: homepage
+    label: Homepage
+
+    files:
+
+      # ----------------------------------------
+      # HOME CONTENT
+      # ----------------------------------------
+
+      - name: home
+        label: Homepage Content
+        file: content/pages/home.json
+        format: json
+
+        fields:
+
+          # HERO
+          - label: Hero
+            name: hero
+            widget: object
+            fields:
+
+            
+              - label: Title
+                name: title
+                widget: string
+
+              - label: Description
+                name: description
+                widget: text
+
+              - label: Image
+                name: image
+                widget: image
+
+              - label: Button Text
+                name: buttonText
+                widget: string
+
+              - label: Button URL
+                name: buttonUrl
+                widget: string
+
+          # ABOUT
+          - label: About
+            name: about
+            widget: object
+            fields:
+
+          
+
+              - label: Title
+                name: title
+                widget: string
+
+              - label: Description
+                name: description
+                widget: markdown
+
+              - label: Image
+                name: image
+                widget: image
+
+          # GALLERY
+          - label: Gallery
+            name: gallery
+            widget: list
+            required: false
+            summary: "{{fields.image}}"
+            field:
+              label: Image
+              name: image
+              widget: image
+          
+          # JOIN
+          - label: Join
+            name: join
+            widget: object
+            fields:
+
+        
+              - label: Title
+                name: title
+                widget: markdown
+
+              - label: Button Text
+                name: button
+                widget: text
+
+              - label: Button URL
+                name: url
+                widget: text
+
+          
+         
+  # ==========================================
+  # 3. LEGAL PAGES
+  # ==========================================
+
+  - name: legal
+    label: Legal Pages
+    label_singular: Legal Page
+    description: Legal documents and privacy information.
+
+    files:
+
+      # ----------------------------------------
+      # PRIVACY POLICY
+      # ----------------------------------------
+
+      - name: privacy
+        label: Privacy Policy
+        file: content/pages/privacy-policy.md
+        fields:
+
+          - label: Page Title
+            name: title
+            widget: string
+            default: Privacy Policy
+
+          - label: Last Updated
+            name: updatedAt
+            widget: datetime
+            format: "YYYY-MM-DD"
+            date_format: "YYYY-MM-DD"
+            time_format: false
+
+          - label: Content
+            name: body
+            widget: markdown
+
+      # ----------------------------------------
+      # TERMS & CONDITIONS
+      # ----------------------------------------
+
+      - name: terms
+        label: Terms & Conditions
+        file: content/pages/terms-and-conditions.md
+        fields:
+
+          - label: Page Title
+            name: title
+            widget: string
+            default: Terms & Conditions
+
+          - label: Last Updated
+            name: updatedAt
+            widget: datetime
+            format: "YYYY-MM-DD"
+            date_format: "YYYY-MM-DD"
+            time_format: false
+
+          - label: Content
+            name: body
+            widget: markdown
+
+      # ----------------------------------------
+      # COOKIE POLICY
+      # ----------------------------------------
+
+      - name: cookies
+        label: Cookie Policy
+        file: content/pages/cookie-policy.md
+        fields:
+
+          - label: Page Title
+            name: title
+            widget: string
+            default: Cookie Policy
+
+          - label: Last Updated
+            name: updatedAt
+            widget: datetime
+            format: "YYYY-MM-DD"
+            date_format: "YYYY-MM-DD"
+            time_format: false
+
+          - label: Content
+            name: body
+            widget: markdown

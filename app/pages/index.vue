@@ -301,14 +301,18 @@ useHead({
       <div class="hero__description">
         <p>{{ pageData.hero.description }}</p>
 
-        <a
+        <NuxtLink
           v-if="pageData.hero.buttonText && pageData.hero.buttonUrl"
           :href="pageData.hero.buttonUrl"
           class="hero__button"
         >
+        <div class="hero-button--tl"></div>
+        <div class="hero-button--tr"></div>
+        <div class="hero-button--bl"></div>
+        <div class="hero-button--br"></div>
           <span>{{ pageData.hero.buttonText }}</span>
           <ArrowUpRight :size="19" />
-        </a>
+        </NuxtLink>
       </div>
 
       <div class="hero__categories">
@@ -343,16 +347,16 @@ useHead({
       <div class="gallery__header">
 
         <div>
-          <span class="eyebrow">TUUSE / Moments</span>
+        
 
           <h2>
-            THE<br />
-            EXPERIENCE<span>.</span>
+  
+            MOMENTS<span>.</span>
           </h2>
         </div>
 
         <p>
-          A collection of moments, people
+          A collection of memories, people
           and experiences that bring us together.
         </p>
 
@@ -436,10 +440,14 @@ useHead({
         MEMORIES.
       </h2>
 
-      <a href="/join" class="primary-button">
+      <NuxtLink href="/join" class="primary-button join-button">
+         <div class="join-button--tl"></div>
+        <div class="join-button--tr"></div>
+        <div class="join-button--bl"></div>
+        <div class="join-button--br"></div>
         BE PART OF IT
         <ArrowUpRight />
-      </a>
+      </NuxtLink>
 
     </section>
 
@@ -671,9 +679,10 @@ useHead({
   justify-content: space-between;
   gap: 55px;
 
+  position: relative;
   padding: 17px 21px;
 
-  background: #575757;
+  background: #57575700;
   color: #ffffff;
 
   font-size: 10px;
@@ -685,12 +694,66 @@ useHead({
   transition: .3s ease;
 }
 
+.hero-button--bl, 
+.hero-button--br,
+.hero-button--tl,
+.hero-button--tr {
+  position:absolute;
+  content: ' ';
+  width: 1rem;
+  height: 1rem;
+  border: solid 2px white;
+  transition: all 0.3s ease-in-out;
+}
+
+.hero-button--tl {
+  top: 0;
+  left: 0;
+  border-bottom: none;
+  border-right: none;
+}
+
+.hero-button--tr {
+  top: 0;
+  right: 0;
+  border-bottom: none;
+  border-left: none;
+}
+
+.hero-button--bl {
+  bottom: 0;
+  left: 0;
+  border-top: none;
+  border-right: none;
+}
+
+.hero-button--br {
+  bottom: 0;
+  right: 0;
+  border-top: none;
+  border-left: none;
+}
 .hero__button:hover {
   background: white;
   color: black;
-  gap: 70px;
+  /* gap: 70px;xs */
 }
 
+.hero__button:hover  .hero-button--br{
+  transform: translate(4px, 4px)
+}
+
+.hero__button:hover  .hero-button--tr{
+  transform: translate(4px, -4px);
+}
+
+.hero__button:hover  .hero-button--tl{
+  transform: translate(-4px, -4px);
+}
+
+.hero__button:hover  .hero-button--bl{
+  transform: translate(-4px, 4px);
+}
 /* CATEGORIES */
 
 .hero__categories {
@@ -795,7 +858,7 @@ useHead({
   .hero {
     min-height: 700px;
     height: calc(100svh - 70px);
-    padding: 25px 6%;
+    padding: 25px 12px;
   }
 
   .hero__edition {
@@ -1226,24 +1289,80 @@ useHead({
 
   padding: 17px 21px;
 
-  background: #000000;
-  color: #ffffff;
+  background: #00000000;
+  color: #000000;
 
   font-size: 10px;
   font-weight: 800;
   letter-spacing: 1px;
   text-transform: uppercase;
   text-decoration: none;
+  position: relative;
 
   transition: .3s ease;
+}
 
 
+.join-button--bl, 
+.join-button--br,
+.join-button--tl,
+.join-button--tr {
+  position:absolute;
+  content: ' ';
+  width: 1rem;
+  height: 1rem;
+  border: solid 2px rgb(0, 0, 0);
+  transition: all 0.3s ease-in-out;
+}
+
+.join-button--tl {
+  top: 0;
+  left: 0;
+  border-bottom: none;
+  border-right: none;
+}
+
+.join-button--tr {
+  top: 0;
+  right: 0;
+  border-bottom: none;
+  border-left: none;
+}
+
+.join-button--bl {
+  bottom: 0;
+  left: 0;
+  border-top: none;
+  border-right: none;
+}
+
+.join-button--br {
+  bottom: 0;
+  right: 0;
+  border-top: none;
+  border-left: none;
 }
 
 .join .primary-button:hover {
-  background: #333;
+  background: #000000;
+  color: white;
 }
 
+.join-button:hover  .join-button--br{
+  transform: translate(4px, 4px)
+}
+
+.join-button:hover  .join-button--tr{
+  transform: translate(4px, -4px);
+}
+
+.join-button:hover  .join-button--tl{
+  transform: translate(-4px, -4px);
+}
+
+.join-button:hover  .join-button--bl{
+  transform: translate(-4px, 4px);
+}
 
 /* ========================================
    FOOTER
@@ -1275,21 +1394,23 @@ useHead({
 
 @media (max-width: 900px) {
 
-  .tickets {
-    padding: 90px 7%;
+  .hero {
+     padding: 10px 20px !important;
+     text-align: center;
   }
-
-  .tickets__container {
-    grid-template-columns: 1fr;
-    gap: 50px;
+  .hero__bottom {
+    flex-direction: column;
+    width: 100%;
+     text-align: center;
+    justify-content: center;
+    align-items: center;
   }
-
-  .tickets__header h2 {
-    font-size: clamp(65px, 15vw, 100px);
-  }
-
   .about__container {
     gap: 45px;
+  }
+
+  .hero__categories {
+    flex-direction: row;
   }
 
 }
@@ -1299,11 +1420,23 @@ useHead({
   .hero {
     height: calc(85svh - 70px);
     min-height: 580px;
-    padding: 0 7%;
+    padding: 5% 7%;
+    text-align: center;
+    justify-content: center;
   }
 
+  .hero__description {
+   margin: 0 auto;
+  }
   
 
+  .hero__categories {
+    width: 100%;
+    margin: 0 auto;
+      text-align: center;
+    justify-content: center;
+    align-items: center;
+  }
   .hero-content__float {
     gap: 1.5rem;
   }
@@ -1315,6 +1448,8 @@ useHead({
   .hero-bottom {
     flex-direction: column;
     gap: 10px;
+    align-items: center;
+    justify-content: center;
     font-size: 8px;
   }
 

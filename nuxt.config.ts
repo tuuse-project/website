@@ -5,6 +5,10 @@ export default defineNuxtConfig({
     name: 'TUUSE - The Unity of Universe Space Events',
     url: process.env.NUXT_SITE_URL || 'https://tuuse.space',
   },
+  sitemap: {
+  enabled: true,
+  sitemaps: false,
+},
   app: {
     head: {
       // title: 'TUUSE',
@@ -33,14 +37,14 @@ export default defineNuxtConfig({
     '@nuxtjs/i18n'
   ],
 
-  i18n: {
-    locales: [
-      { code: 'en', name: 'English', file: 'en.json' },
-    ],
-    langDir: 'locales/', 
-    defaultLocale: 'en',
-    strategy: 'prefix_except_default'
-  }
+ i18n: {
+  locales: [
+    { code: 'en', name: 'English', file: 'en.json' },
+  ],
+  langDir: 'locales/',
+  defaultLocale: 'en',
+  strategy: 'no_prefix',
+}
   ,
   css: [
     '~/assets/css/style.css',
