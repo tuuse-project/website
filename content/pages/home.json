@@ -9,18 +9,16 @@
   "about": {
     "title": "Who we are",
     "description": "**TUUSE** is an independent event project bringing people together through electronic music, unique spaces, and shared experiences. More than events, we create atmospheres where music connects people and every moment becomes part of something bigger.",
-    "image": "/images/uploads/in-3.jpg"
+    "image": "/images/uploads/img_6034.jpeg"
   },
   "presale": {
     "enabled": false
   },
   "gallery": [
-    "/images/uploads/in-3.jpg",
-    "/images/uploads/hero-bg.jpeg",
-    "/images/uploads/screenshot-2026-11-03-at-15.48.16.png",
-    "/images/uploads/hero-bg.jpeg",
-    "/images/uploads/in-3.jpg",
-    "/images/uploads/screenshot-2026-11-03-at-15.48.16.png"
+    "/images/uploads/img_6033.jpeg",
+    "/images/uploads/img_6032.jpeg",
+    "/images/uploads/img_6034.jpeg",
+    "/images/uploads/img_6031.jpeg"
   ],
   "legal": "m,",
   "join": {
