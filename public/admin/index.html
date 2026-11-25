@@ -109,12 +109,12 @@ body {
   min-height: 64px;
 }
 
-[class*="AppHeaderContent"] img {
+[class*="AppHeaderLogo"] img {
   filter: invert(1);
   transition: opacity var(--transition);
 }
 
-[class*="AppHeaderContent"] img:hover {
+[class*="AppHeaderLogo"] img:hover {
   opacity: .7;
 }
 
@@ -311,6 +311,24 @@ button {
 [class*="PublishedButton"] {
   background: var(--surface) !important;
   color: rgb(131, 229, 131) !important
+}
+
+[class*="DeploysTop"] {
+  background-color: var(--surface) !important;
+}
+
+[class*="Card"] {
+  background-color: var(--surface) !important;
+  overflow: auto !important;
+  color: white !important;
+}
+
+[class*="Card"] td {
+  border-bottom: solid 1px var(--border) !important
+}
+
+[class*="DeploysTop"] h1 {
+  color: white !important;
 }
 
 .css-1jseymp-Card  {
