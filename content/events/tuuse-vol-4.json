@@ -1,0 +1,26 @@
+{
+  "slug": "tuuse-vol-4-soho-club",
+  "title": "TUUSE vol. 4",
+  "description": "Soho",
+  "cover": "/images/uploads/img_6602.jpeg",
+  "date": "2026-11-21",
+  "time": "23:00",
+  "location": "SOHO CLUB",
+  "lineup": [
+    {
+      "name": "Primon"
+    },
+    {
+      "name": "Rodya Hetsov"
+    },
+    {
+      "name": "Paul Mate"
+    },
+    {
+      "name": "Dimov"
+    }
+  ],
+  "status": "published",
+  "ticketType": "General Admission",
+  "currency": "MDL"
+}

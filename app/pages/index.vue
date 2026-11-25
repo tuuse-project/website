@@ -293,7 +293,6 @@ useHead({
 
     <h1 class="hero__title">
       {{ pageData.hero.title }}
-      <span class="hero__title-dot">.</span>
     </h1>
 
     <div class="hero__bottom">
@@ -337,7 +336,7 @@ useHead({
     <!-- ================================== -->
     <!-- GALLERY -->
     <!-- ================================== -->
-
+ <hr class="divider divider--hero-galery">
     <section
       v-if="pageData.gallery?.length"
       id="gallery"
@@ -386,6 +385,7 @@ useHead({
       </div>
 
     </section>
+    <hr class="divider">
 
     <!-- ================================== -->
     <!-- ABOUT -->
@@ -648,8 +648,8 @@ useHead({
   align-items: flex-end;
   gap: 40px;
 
-  border-top: 1px solid rgba(255,255,255,.3);
-  padding-top: 25px;
+  /* border-top: 1px solid rgba(255,255,255,.3); */
+
 
   animation: heroFadeUp 1s .55s both;
 }
@@ -1527,5 +1527,30 @@ useHead({
   }
 
 }
+.divider {
+  transform: rotate(1deg) scaleX(300%);
+  width: 100%;
+  position: relative;
+  z-index: 10;
+  opacity: 0.4
 
+}
+
+.divider--hero-galery {
+   transform: rotate(-1deg) scaleX(300%);
+}
+.join {
+  position: relative
+}
+.join::before {
+  content: " ";
+  width: 100%;
+  height: 5rem;
+  position: absolute;
+  top:0;
+  left:0;
+   transform: rotate(1deg) scaleX(300%) translateY(-60%);
+  background-color: rgb(255, 255, 255);
+  z-index: 20
+}
 </style>

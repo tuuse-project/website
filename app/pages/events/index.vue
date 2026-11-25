@@ -1,5 +1,6 @@
 
 <script setup lang="ts">
+import { ArrowUpRight } from 'lucide-vue-next';
 const { data: events } = await useAsyncData(
   'events',
   () => queryCollection('events')
@@ -20,12 +21,12 @@ const formatDate = (date: string) => {
 <template>
     <!-- Header -->
     <section class="max-w-7xl mx-auto pb-2"> 
-     <div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+     <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 w-full">
         <h1 class="text-6xl md:text-8xl font-bold tracking-tighter uppercase">
           Events<span class="text-zinc-600">.</span>
         </h1>
 
-        <p class="text-sm text-zinc-500 max-w-xs leading-relaxed text-end">
+        <p class="text-sm text-zinc-500 leading-relaxed text-end w-full">
           Discover upcoming experiences, unforgettable nights
           and moments worth remembering.
         </p>
@@ -63,7 +64,9 @@ const formatDate = (date: string) => {
             </div>
 
             <div class="absolute bottom-4 right-4 w-11 h-11 rounded-full border border-white/50 flex items-center justify-center bg-black/20 backdrop-blur-sm transition-all duration-300 group-hover:bg-white group-hover:text-black group-hover:border-white">
-              <span class="text-xl">↗</span>
+              <span class="text-xl">
+                <ArrowUpRight></ArrowUpRight>
+              </span>
             </div>
           </div>
 

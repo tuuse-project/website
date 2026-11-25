@@ -45,7 +45,14 @@
 /* =========================================
    BASE
 ========================================= */
+.css-5hiu9n, .css-1es1p1t, .css-83wr9v {
+  background-color: none !important;
+  background: none !important;
+}
 
+[id*='gallery-field']{
+  background-color: none !important;
+}
 * {
   font-family: 'Geist', sans-serif !important;
   box-sizing: border-box;
@@ -264,18 +271,97 @@ button {
   margin-bottom: 20px;
 }
 
+.css-5hiu9n, .css-1es1p1t  {
+  border: 1px solid var(--border) !important;
+  border-radius: var(--radius-sm) !important;
+}
+
+[class*="fieldLabel"]::after {
+  display: none !important;
+}
+
+[class*="fieldLabel"] {
+  background: var(--surface) !important;
+  color: var(--text) !important;
+  border-left-color: var(--accent) !important;
+}
+
+.css-lshhuz {
+   background: var(--surface) !important;
+     color: var(--text) !important;
+      border: none !important;
+  border-radius: var(--radius-sm) !important;
+}
+
+.css-lshhuz * {
+  color: white !important
+}
+
+[class*="DateTimeControl"] {
+  background-color: var(--surface) !important;
+  border: solid 1px  var(--border) !important;
+}
+[class*="CloseButton"] {
+  background-color: var(--surface) !important;
+}
+[class*="toolbarSection"]:hover {
+  background-color: transparent !important;
+}
+
+[class*="PublishedButton"] {
+  background: var(--surface) !important;
+  color: rgb(131, 229, 131) !important
+}
+
+.css-1jseymp-Card  {
+  border-color: var(--border) !important;
+}
+[class*="ImageWrapper"] {
+  background-color: var(--surface) !important;
+  border: solid 1px var(--border) !important;
+  background-image: 
+  linear-gradient(45deg, rgb(30, 30, 30) 25%, transparent 25%, transparent 75%, rgb(30, 30, 30) 75%, rgb(30, 30, 30)), 
+  linear-gradient(45deg, rgb(30, 30, 30) 25%, transparent 25%, transparent 75%, rgb(30, 30, 30) 75%, rgb(30, 30, 30)) !important;
+}
+
+[class*="StyledModal"] {
+  background-color: var(--surface) !important;
+  color: white !important
+}
+[class*="dropdownItem"] {
+  background-color: var(--surface) !important;
+  box-shadow: 0 0 #0000 !important;
+  color: white !important;
+}
+
+[class*="DropdownList"] {
+   box-shadow: none !important;
+}
 /* =========================================
    INPUTS
 ========================================= */
 
 input,
 textarea,
-select {
+select, 
+.css-83wr9v,
+.cms-editor-visual,
+[class*="SortableListItem"] {
   background: var(--surface) !important;
   color: var(--text) !important;
   border: 1px solid var(--border) !important;
   border-radius: var(--radius-sm) !important;
   transition: border-color var(--transition) !important;
+}
+[class*="TopBarContainer"] {
+  background-color: var(--surface-hover) !important;
+  background: var(--surface-hover) !important;
+}
+[class*="StyledListItemTopBar"], [class*="NestedObjectLabel"], .css-t16udx {
+  background: var(--surface) !important;
+   background-color: var(--surface) !important;
+     border: 1px solid var(--border) !important;
+  border-radius: var(--radius-sm) !important;
 }
 
 input:focus,

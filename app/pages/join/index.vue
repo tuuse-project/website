@@ -77,6 +77,8 @@ async function submitForm() {
           Leave your details to join the TUUSE guest list.
           We'll keep you updated about upcoming events.
         </p>
+        <br>
+        <br>
 
         <form @submit.prevent="submitForm">
 
@@ -152,9 +154,6 @@ async function submitForm() {
 
         </form>
 
-        <div class="footer-note">
-          TUUSE — EXPERIENCE BEYOND THE ORDINARY
-        </div>
       </template>
 
       <div v-else class="success">
@@ -180,7 +179,7 @@ async function submitForm() {
 
 <style scoped>
 .join {
-  min-height: 100vh;
+  min-height: 100%;
   
   color: #f5f5f5;
   font-family: inherit;
